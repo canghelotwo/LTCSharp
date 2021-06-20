@@ -1,0 +1,16 @@
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\ModelEF.dll.config
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\ModelEF.dll
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\ModelEF.pdb
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\EntityFramework.dll
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\EntityFramework.SqlServer.dll
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\EntityFramework.xml
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\EntityFramework.SqlServer.xml
+D:\BaiKTRaC#\VanDoanh\ModelEF\obj\Debug\ModelEF.csprojAssemblyReference.cache
+D:\BaiKTRaC#\VanDoanh\ModelEF\obj\Debug\ModelEF.csproj.CoreCompileInputs.cache
+D:\BaiKTRaC#\VanDoanh\ModelEF\obj\Debug\ModelEF.csproj.CopyComplete
+D:\BaiKTRaC#\VanDoanh\ModelEF\obj\Debug\ModelEF.dll
+D:\BaiKTRaC#\VanDoanh\ModelEF\obj\Debug\ModelEF.pdb
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\PagedList.dll
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\PagedList.Mvc.dll
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\PagedList.xml
+D:\BaiKTRaC#\VanDoanh\ModelEF\bin\Debug\PagedList.Mvc.xml

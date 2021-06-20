@@ -1,0 +1,174 @@
+﻿@{
+/**/
+
+Layout = null;
+}
+<!DOCTYPE html>
+<html lang="">
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title - D Shop</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Aset/NguoiDung/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Aset/Admin/plugins/images/favicon.png">
+    @using ModelEF.Model
+</head>
+<body id="top">
+    <!-- ################################################################################################ -->
+    <div class="wrapper row0">
+        <div id="topbar" class="hoc clear">
+            <div class="fl_right">
+                <ul class="nospace">
+                    <li><a href="#" class="fas fa-sign-in-alt rgtspace-5"> Đăng nhập</a></li>
+                    <li><a href="#" class="rgtspace-5">Đăng ký</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="one_half first">
+                <h1 class="logoname"><a href="@Url.Action("Index", "Home")"><span>DT</span>shop</a></h1>
+            </div>
+            <div class="one_half">
+                <ul class="nospace clear">
+                    <li class="one_half first">
+                        <div class="block clear"><i class="fas fa-phone"></i> <span><strong class="block">Call:</strong> 0366837259 </span> </div>
+                    </li>
+                    <li class="one_half">
+                        <div class="block clear"><i class="far fa-clock"></i> <span><strong class="block" style="width: 250px"> Mở cửa các ngày trong tuần:</strong> 07.00am - 20.00pm</span> </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <nav id="mainav" class="hoc clear">
+            <ul class="clear">
+                <li class="active"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li>
+                    <a class="drop" href="@Url.Action("Index", "Home")">Điện thoại</a>
+                    <ul>
+                        @{
+                            VanDoanhContext db = new VanDoanhContext();
+                            var n = db.Products.ToList();
+                        }
+                        @foreach (var item in n)
+                        {
+                            <li><a href="#"> @item.Name</a></li>
+                        }
+                    </ul>
+                </li>
+                <li><a href="#">Phụ kiện</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Thông tin</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- ################################################################################################ -->
+    <div class="wrapper bgded overlay" style="background-image:url('Aset/NguoiDung/demo/backgrounds/backgroud1.jpg');">
+        <div id="pageintro" class="hoc clear row" style="padding-top: 20px; padding-bottom: 20px;">
+            <div class="col-md-8">
+                <article>
+                    <p>Điện thoại thông minh</p>
+                    <h3 class="heading">Điện thoại Samsung Galaxy Note 10</h3>
+                    <p>Công nghệ Dynamic AMOLED này còn cho ra màn hình ít ánh sáng xanh hơn nhằm giúp mắt thoải mái</p>
+                    <footer><a class="btn" href="~/Home/Details/16">Xem Thêm</a></footer>
+                </article>
+            </div>
+            <div class="col-md-3">
+                <img src="~/Aset/NguoiDung/demo/backgrounds/samsung-galaxy-note-10-pink.png" />
+            </div>
+        </div>
+    </div>
+    <div class="wrapper row3">
+        <main class="hoc container clear">
+            <!-- ################################################################################################ -->
+            <div class="page-breadcrumb bg-info">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <header class="panel-heading">
+                            <label style="color:forestgreen"><b>@RenderSection("header", required: true)</b></label>
+                        </header>
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+            <!-- ################################################################################################ -->
+            <div class="clear"></div>
+        </main>
+    </div>
+    <!-- ################################################################################################ -->
+    <div class="wrapper gradient">
+        <section id="cta" class="hoc container clear">
+            <div class="sectiontitle">
+                <p>Ý kiến phản hồi</p>
+            </div>
+            <ul class="nospace clear">
+                <li class="one_third first">
+                    <div class="block clear"><i class="fas fa-phone"></i> <span><strong>Give us a call:</strong> (+84) 366837259</span> </div>
+                </li>
+                <li class="one_third">
+                    <div class="block clear"><i class="fas fa-envelope"></i> <span><strong>Send us a mail:</strong> tanbinh@gmail.com</span> </div>
+                </li>
+                <li class="one_third">
+                    <div class="block clear"><i class="fas fa-map-marker-alt"></i> <span><strong>Come visit us:</strong> Directions to <a href="#">our location</a></span> </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <!-- ################################################################################################ -->
+    <div class="wrapper row4">
+        <footer id="footer" class="hoc clear">
+            <div class="one_third first">
+                <h1 class="logoname"><span>DT</span>shop</h1>
+                <ul class="faico clear">
+                    <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
+                    <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                    <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
+                </ul>
+            </div>
+            <div class="one_third">
+                <p>Thông tin khác</p>
+                <ul class="nospace linklist">
+                    <li><a href="#">Quy chế hoạt động</a></li>
+                    <li><a href="#">Chính sách Bảo hành</a></li>
+                    <li><a href="#">Hợp tác Kinh doanh</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                </ul>
+            </div>
+            <div class="one_third">
+                <p>Hỗ trợ khách hàng</p>
+                <p>Nhập câu hỏi cần tư vấn.</p>
+                <form method="post" action="#">
+                    <fieldset>
+                        <legend>Newsletter:</legend>
+                        <input class="btmspace-15" type="text" value="" placeholder="Câu hỏi">
+                        <input class="btmspace-15" type="text" value="" placeholder="Email">
+                        <button type="submit" value="submit">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </footer>
+    </div>
+    <!-- ################################################################################################ -->
+    <div class="wrapper row5">
+        <div id="copyright" class="hoc clear">
+            <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved - <a href="#">Tấn Bình</a></p>
+        </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+    <!-- JAVASCRIPTS -->
+    <script src="~/Aset/NguoiDung/scripts/jquery.min.js"></script>
+    <script src="~/Aset/NguoiDung/scripts/jquery.backtotop.js"></script>
+    <script src="~/Aset/NguoiDung/scripts/jquery.mobilemenu.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

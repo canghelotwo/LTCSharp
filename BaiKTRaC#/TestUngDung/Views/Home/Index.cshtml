@@ -1,0 +1,57 @@
+﻿@using PagedList.Mvc
+@using PagedList
+@model IEnumerable<ModelEF.Model.Product>
+@{
+    ViewBag.Title = "Home";
+}
+@section header{
+    <i class="fa fa-home">&nbsp; Sản phẩm</i>
+}
+<div class="row">
+
+    <ul class="nospace group overview">
+        @foreach (var item in Model)
+        {
+            <li class="one_third">
+                <center>
+                    <figure>
+                        <a href="~/Home/Details/@item.ProductID">
+                            <img src=@Url.Content("~/Image/"+item.Image) class="img-responsive" alt="" style="height:300px; width:auto" />
+                        </a>
+                        <figcaption>
+                            <p>@item.Name</p>
+                            <p style="color:red">Giá: @(String.Format("{0:0,0 VND}", item.UnitCost))</p>
+                        </figcaption>
+                    </figure>
+
+                    <br />
+                    <input class="btn btn-outline-success" style="margin-bottom:5px" type="submit" value="Đặt mua" id="bgnGioHang" />
+                </center>
+            </li>
+        }
+    </ul>
+    @*@foreach (var item in Model)
+        {
+            <div class="col-md-4 col-sm-12">
+                <center>
+                    <figure>
+                        <a href="~/Home/Details/@item.IdSP">
+                            <img src=@Url.Content("~/Image/"+item.HinhAnh) class="img-responsive" alt="" style="height:300px; width:auto" />
+                        </a>
+                        <figcaption>
+                            <p>@item.TenSP</p>
+                            <p style="color:red">Giá: @(String.Format("{0:0,0 VND}", item.GiaTien))</p>
+                        </figcaption>
+                    </figure>
+                    <a href="~/Home/Details/@item.IdSP">
+                        <img src=@Url.Content("~/Image/"+item.HinhAnh) class="img-responsive" alt="" style="height:300px; width:auto" />
+                    </a>
+                    <p>@item.TenSP</p>
+                    <p style="color:red">Giá: @(String.Format("{0:0,0 VND}", item.GiaTien))</p>
+                    <br />
+                    <input class="btn btn-outline-success" style="margin-bottom:5px" type="submit" value="Đặt mua" id="bgnGioHang" />
+                </center>
+            </div>
+        }*@
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, @seachString = @ViewBag.SearchString }))
+</div>
